@@ -13,4 +13,4 @@ This is the staging tree of Bitcoin RM. If you don’t understand what you are d
 ## Links
 
 * Website: https://www.bitcoinrm.org
-* Slack: [invitation](https://join.slack.com/t/bitcoin-rm/shared_invite)
+* Discord: [invitation](https://discord.gg/aj2QVc9)
