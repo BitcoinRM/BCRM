@@ -8,7 +8,7 @@ This is the first smart fork of Bitcoin. We start with a clean blockchain, witho
 
 ## WARNING
 
-This is the staging tree of Bitcoin RM. If you don’t understand what you are doing, please don’t compile and run your own client from the staging tree. For release version, please switch to [0.15 branch](https://github.com/BitcoinRM/BCRM/tree/0.15.0.1) or [release page](https://github.com/BitcoinRM/BCRM/releases).
+This is the staging tree of Bitcoin RM. If you don’t understand what you are doing, please don’t compile and run your own client from the staging tree.
 
 ## Links
 
