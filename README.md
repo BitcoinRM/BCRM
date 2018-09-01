@@ -2,6 +2,7 @@
 
 #### The First Bitcoin Smart Fork to Empower Retail Merchants
 
+
 Bitcoin RM (codename BCRM) is a fork of the Bitcoin blockchain that will occur on August 30, 2018 Eastern Daytime Time.
 
 This is the first smart fork of Bitcoin. We start with a clean blockchain, without copying the blockchain of Bitcoin. We take a snapshot of UTXOs on August 20, 2018. The original Bitcoin blockchain will continue on unaltered. As a result of this process, a new cryptocurrency will be born.
