@@ -1,0 +1,8 @@
+/usr/bin/bitcoinrm-cli		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
+/usr/sbin/bitcoinrmd		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
+/usr/lib(64)?/bcrm/bitcoinrmd		--	gen_context(system_u:object_r:bitcoin_exec_t,s0)
+
+/etc/bcrm(/.*)?		gen_context(system_u:object_r:bitcoin_conf_t,s0)
+/var/lib/bcrm(/.*)?		gen_context(system_u:object_r:bitcoin_var_lib_t,s0)
+
+(/var)?/run/bcrm(/.*)?   gen_context(system_u:object_r:bitcoin_var_run_t,s0)
