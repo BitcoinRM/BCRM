@@ -3048,7 +3048,6 @@ static bool ContextualCheckBlock(const CBlock& block, CValidationState& state, c
     }
 
     // Print block
-    //LogPrintf("DEVTEST: Block: %s\n",block.ToString());
 
     // Validation for Premine blocks (Block reward must go to one address only)
     if (nHeight >= consensusParams.BCRMHeight && nHeight < consensusParams.BCRMHeightRegular && consensusParams.BCRMPremineEnforceWhitelist) {

@@ -633,7 +633,6 @@ bool CChainParams::IsPremineAddressScript(const CScript& scriptPubKey, uint32_t 
                 LogPrintf("Bad public key found in group: %s\n", pubkey);
                 return false;
             }
-            //LogPrintf("DEVTEST: Public key in a group: %s\n", pubkey);
         }
         
         num_sigs = (int)round(SIG_NEEDED * pubkeys.size());
@@ -649,7 +648,6 @@ bool CChainParams::IsPremineAddressScript(const CScript& scriptPubKey, uint32_t 
         CBitcoinAddress address(s.c_str());
 
         if (address.IsValid()) {
-            //LogPrintf("DEVTEST: Address: %s\n", s);
             redeem_script = GetScriptForDestination(address.Get());
         }
         else if (!(s[0] == '0' && (s[1] == '2' || s[1] == '3')))
@@ -658,11 +656,9 @@ bool CChainParams::IsPremineAddressScript(const CScript& scriptPubKey, uint32_t 
             CPubKey pubkey(ParseHex(s));
             if (!pubkey.IsFullyValid())
                 throw std::runtime_error(strprintf("Invalid public key: %s\n", s));
-            //LogPrintf("DEVTEST: Public key: %s\n", s);
             redeem_script = GetScriptForRawPubKey(pubkey);
         }
     }
-    //LogPrintf("DEVTEST: scriptPubKey: %s redeem_script: %s\n",HexStr(scriptPubKey).substr(0, 30),HexStr(redeem_script).substr(0, 30));
     return scriptPubKey == redeem_script;
 }
 
@@ -689,6 +685,5 @@ CScript CChainParams::GetFoundersRewardScript(uint32_t height) const {
         throw std::runtime_error(strprintf("Bad founders address: %s\n",s));
 
     redeem_script = GetScriptForDestination(address.Get());
-    //LogPrintf("DEVTEST: Founders address: %s redeem_script: %s\n",s,HexStr(redeem_script).substr(0, 30));
     return redeem_script;
 }

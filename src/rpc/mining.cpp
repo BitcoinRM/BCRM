@@ -158,7 +158,6 @@ UniValue generateBlocks(std::shared_ptr<CReserveScript> coinbaseScript, int nGen
 
             while (nMaxTries > 0 &&
                    ((int)pblock->nNonce.GetUint64(0) & nInnerLoopEquihashMask) < nInnerLoopEquihashCount) {
-                //LogPrintf("DEVTEST: Tries left: %d\n", nMaxTries);
                 // Yes, there is a chance every nonce could fail to satisfy the -regtest
                 // target -- 1 in 2^(2^256). That ain't gonna happen
                 pblock->nNonce = ArithToUint256(UintToArith256(pblock->nNonce) + 1);

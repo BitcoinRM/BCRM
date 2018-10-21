@@ -87,7 +87,6 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, const Cons
 
     // Keep t reasonable in case strange solvetimes occurred.
     if (t < k / dnorm) {
-      //LogPrintf("DEVTEST: t Below k/dnorm\n");
       t = k / dnorm;
     }
 
@@ -96,30 +95,24 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, const Cons
     arith_uint256 prev_target;
     prev_target.SetCompact(pindexLast->nBits);
 
-    //LogPrintf("DEVTEST: Initial next_target: %s\n",next_target.ToString());
 
     // Prevent difficulty from dropping too fast or increasing too much. So stay in range: 67% - 150%
     if (next_target > prev_target * 150/100) {
       next_target = prev_target * 150/100;
-      //LogPrintf("DEVTEST: Above 150/100; next_target: %s\n",next_target.ToString());
     }
     else if (next_target < prev_target * 100/150) {
       next_target = prev_target * 100/150;
-      //LogPrintf("DEVTEST: Below 100/150; next_target: %s\n",next_target.ToString());
     }
 
     // If last 3 blocks are generated in less than 80% of block interval,
     // difficulty must jump at least 6% (For N=90 coins, 6% jump recommended)
     if (sum_3_st < T * 80/100) {
-      //LogPrintf("DEVTEST: Below 80/100; next_target: %s\n",next_target.ToString());
       if (next_target > prev_target * 100/106) {
         next_target = prev_target * 100/106;
-        //LogPrintf("DEVTEST: Adjusted next_target: %s\n",next_target.ToString());
       }
     }
 
     if (next_target > pow_limit) {
-      //LogPrintf("DEVTEST: Above pow_limit; next_target: %s\n",next_target.ToString());
       next_target = pow_limit;
     }
 
