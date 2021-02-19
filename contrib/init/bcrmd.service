@@ -1,0 +1,22 @@
+[Unit]
+Description=Bitcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=bcrm
+Group=bcrm
+
+Type=forking
+PIDFile=/var/lib/bcrmd/bcrm.pid
+ExecStart=/usr/bin/bcrmd -daemon -pid=/var/lib/bcrmd/bcrm.pid \
+-conf=/etc/bcrm/bcrm.conf -datadir=/var/lib/bcrmd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
