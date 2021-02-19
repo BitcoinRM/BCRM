@@ -13,5 +13,6 @@ This is the staging tree of Bitcoin RM. If you don’t understand what you are d
 
 ## Links
 
-* Website: https://www.bitcoinrm.org
+* Main Website: https://www.bitcoinrm.com
+* Community Website: https://www.bitcoinrm.org
 * Discord: [invitation](https://discord.gg/aj2QVc9)
